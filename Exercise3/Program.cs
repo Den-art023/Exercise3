@@ -21,6 +21,11 @@ namespace Exercise3
             LAST = null;
         }
 
+        public void insertNode()
+        {
+            
+        }
+
         public bool Search(int rollNo, ref Node previous, ref Node current)
         {
             for(previous = current = LAST.next; current != LAST; previous =
@@ -59,6 +64,14 @@ namespace Exercise3
                 }
                 Console.Write(LAST.rollNumber + "    " + LAST.name + "\n");
             }
+        }
+        public void firstNode()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+                Console.WriteLine("\nThe first record in the list is:\n\n" +
+                    LAST.next.rollNumber + "    " + LAST.next.name);
         }
     }
 }
