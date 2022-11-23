@@ -34,6 +34,20 @@ namespace Exercise3
             newNode.rollNumber = nim;
 
 
+            if (LAST == null || nim <= LAST.rollNumber)
+            {
+                if ((LAST != null) && (nim == LAST.rollNumber))
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                newNode.next = LAST;
+                LAST = newNode;
+                return;
+            }
+            Node previous, current;
+            previous = LAST.next;
+            current = LAST.next;
 
         }
 
