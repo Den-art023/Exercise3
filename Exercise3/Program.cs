@@ -164,13 +164,71 @@ namespace Exercise3
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
                     {
-                       
-
+                        case '1':
+                            {
+                                obj.insertNode();
+                            }
+                            break;
+                        case '2':
+                            {
+                                if (obj.listEmpty())
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Console.WriteLine("Enter the roll number of the student" +
+                                    "whose record is to be deleted: ");
+                                int number = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.deleteNode(number) == false)
+                                    Console.WriteLine("record not found");
+                                else
+                                    Console.WriteLine("Record with the number" + number + "deleted\n");
+                            }
+                            break;
+                        case '3':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '4':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Node prev, curr;
+                                prev = curr = null;
+                                Console.Write("\nEnter the roll number of the student whose record you want to search: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref prev, ref curr) == false)
+                                    Console.WriteLine("\nRecord not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("\nRoll number: " + curr.rollNumber);
+                                    Console.WriteLine("\nName: " + curr.name);
+                                }
+                            }
+                            break;
+                        case '5':
+                            {
+                                obj.firstNode();
+                            }
+                            break;
+                        case '6':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid option");
+                            }
+                            break;
                     }
                 }
                 catch(Exception e)
                 {
-                    Console.WriteLine("Check for the values entered.");
+                    Console.WriteLine(e.ToString());
                 }
             }
         }
