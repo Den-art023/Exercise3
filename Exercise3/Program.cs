@@ -11,8 +11,5 @@ namespace Exercise3
         public int rollNumber;
         public string name;
         public Node next;
-        static void Main(string[] args)
-        {
-        }
     }
 }
