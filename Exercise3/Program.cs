@@ -49,6 +49,18 @@ namespace Exercise3
             previous = LAST.next;
             current = LAST.next;
 
+            while((current != null) && (nim >= current.rollNumber))
+            {
+                if(nim == current.rollNumber)
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                previous.next = current;
+                previous.next = newNode;
+            }
+            newNode.next = LAST.next;
+            LAST.next = newNode;
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)
