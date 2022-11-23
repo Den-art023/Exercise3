@@ -23,7 +23,12 @@ namespace Exercise3
 
         public void insertNode()
         {
-            
+            int nim;
+            string nm;
+            Console.WriteLine("\nEnter the roll number of the student: ");
+            nim = Convert.ToInt32(Console.ReadLine());
+           
+
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)
