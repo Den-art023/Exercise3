@@ -12,4 +12,13 @@ namespace Exercise3
         public string name;
         public Node next;
     }
+    class CircularList
+    {
+        Node LAST;
+        
+        public CircularList()
+        {
+            LAST = null;
+        }
+    }
 }
