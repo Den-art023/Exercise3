@@ -62,6 +62,41 @@ namespace Exercise3
             newNode.next = LAST.next;
             LAST.next = newNode;
         }
+        public bool deleteNode(int number)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(number, ref previous, ref current) == false)
+                return false;
+            if (number == LAST.next.rollNumber)
+            {
+                current = LAST.next;
+                LAST.next = current.next;
+                return true;
+            }
+            if (number == LAST.rollNumber)
+            {
+                current = LAST;
+                previous = current.next;
+                while (previous.next != LAST)
+                    previous = previous.next;
+                previous.next = LAST.next;
+                LAST = previous;
+                return true;
+            }
+            if (number <= LAST.rollNumber)
+            {
+                current = LAST.next;
+                previous = LAST.next;
+                while (number > current.rollNumber || previous == LAST)
+                {
+                    previous = current;
+                    current = current.next;
+                }
+                previous.next = current.next;
+            }
+            return true;
+        }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)
         {
